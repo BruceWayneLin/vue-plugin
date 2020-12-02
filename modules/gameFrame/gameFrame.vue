@@ -1,7 +1,7 @@
 <template>
   <div
     class="gameFrame"
-    v-if="bool"
+    v-if="url"
   >
     <div 
       class="game-wrap"
@@ -52,7 +52,6 @@ export default {
       height: "500px",
       width: "50%",
       sizeW: false,
-      bool: true
     };
   },
   components:{
@@ -66,7 +65,7 @@ export default {
       this.height = "100vh";
     },
     toClose() {
-      this.bool = false;
+      this.url = '';
     }
   },
   mounted(){
