@@ -92,6 +92,7 @@ export default {
   }
   .gameFrame {
     max-width: 1300px;
+    margin: auto;
   }
 
   #gameIframe.hugeSize {
