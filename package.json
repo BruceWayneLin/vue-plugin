@@ -1,0 +1,15 @@
+{
+  "name": "skanda-lib",
+  "version": "1.0.1",
+  "description": "vue 3 plugins ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.sevenone.online/jpproject/vue-plugin.git"
+  },
+  "author": "Skanda Lin",
+  "license": "ISC"
+}
