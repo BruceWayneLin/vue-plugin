@@ -1,6 +1,6 @@
 {
   "name": "skanda-lib",
-  "version": "1.0.1",
+  "version": "001.000.002",
   "description": "vue 3 plugins ",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.sevenone.online/jpproject/vue-plugin.git"
+    "url": ""
   },
   "author": "Skanda Lin",
   "license": "ISC"

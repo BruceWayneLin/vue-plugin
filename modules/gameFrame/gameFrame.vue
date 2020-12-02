@@ -8,7 +8,7 @@
     >
       <iframe
         id="gameIframe"
-        src="https://cdn.spinomenal.com/ExternalComponents/Game/play.html?partnerId=innovision&amp;gameToken=840356f228f8fa88&amp;gameCode=SlotMachine_ChestOfFortunes&amp;langCode=en_US&amp;platform=1&amp;HomeUrl=https%3a%2f%2ftrustdice.win&amp;configFile=ConfigTestV2-NormalGames.json&amp;isReal=false&amp;srvUrl=https%3a%2f%2frgs-ss-demo.spinomenal.com%2fapi"
+        :src="url"
         allowfullscreen="true"
         :width="width"
         :height="height"
@@ -23,12 +23,14 @@
         <div class="mr-2">
           <Fullscreen
             width="25px"
+            style="cursor:pointer"
             @click="changeSize()"
           />
         </div>
         <div class="mr-2">
           <Close
             @click="toClose()"
+            style="cursor:pointer"
             width="25px"
           />
         </div>
