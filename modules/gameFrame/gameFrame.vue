@@ -20,16 +20,30 @@
         id="special"
         class="container-fluid bg-dark"
       >
-        <div class="mr-2">
+        <div class="mr-4">
           <Fullscreen
             width="25px"
             style="cursor:pointer"
             @click="changeSize()"
           />
         </div>
-        <div class="mr-2">
+        <div class="mr-4">
           <Close
             @click="toClose()"
+            style="cursor:pointer"
+            width="25px"
+          />
+        </div>
+        <div class="mr-4" v-if="!favor">
+          <Star
+            @click="toggleFavorite()"
+            style="cursor:pointer"
+            width="25px"
+          />
+        </div>
+        <div class="mr-4" v-else>
+          <StarH
+            @click="toggleFavorite()"
             style="cursor:pointer"
             width="25px"
           />
@@ -41,11 +55,15 @@
 <script>
 import Fullscreen from "./images/Fullscreen.svg";
 import Close from "./images/close.svg";
+import Star from "./images/star.svg";
+import StarH from "./images/star-h.svg";
 
 export default {
   name:"GameFrame",
   props: {
     url: String,
+    game: Object, 
+    favor: Boolean
   },
   data(){
     return {
@@ -56,7 +74,9 @@ export default {
   },
   components:{
     Fullscreen,
-    Close
+    Close, 
+    Star,
+    StarH
   },
   methods: {
     changeSize() {
@@ -66,6 +86,9 @@ export default {
     },
     toClose() {
       this.url = '';
+    },
+    toggleFavorite(event) {
+      this.$emit('addFavor', this.favor);
     }
   },
   mounted(){
@@ -103,6 +126,13 @@ export default {
   #special  {
     display: flex;
     justify-content: flex-end;
+    border-radius: 0.5rem;
+    background: center center / cover rgb(15, 33, 46);
+    color: rgb(213, 220, 235);
+    padding: 0px;
+    overflow: hidden;
+    padding: 15px;
+    margin-top: 5px;
   }
  
 </style>

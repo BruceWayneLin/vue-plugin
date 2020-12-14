@@ -1,6 +1,9 @@
 
 import { events } from "../gameFrame/Events";
 import GameFrame from "../gameFrame/gameFrame.vue";
+import VueUi from '@vue/ui'
+import '@vue/ui/dist/vue-ui.css'
+
 class Installer { 
   constructor() { 
   }
@@ -11,9 +14,7 @@ class Installer {
         console.log("Mounted!");
       }
     });
-    // Vue.prototype.$gameFrame = (options) => {
-    //   events.$emit("gameFrame", options);
-    // };
+    Vue.use(VueUi);
   }
 }
 

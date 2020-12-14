@@ -11,5 +11,8 @@
     "url": ""
   },
   "author": "Skanda Lin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@vue/ui": "^0.11.6"
+  }
 }
