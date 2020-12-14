@@ -1,6 +1,6 @@
 {
   "name": "skanda-lib",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "vue 3 plugins ",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,5 @@
   },
   "devDependencies": {
     "@vue/ui": "^0.11.6"
-
   }
 }
