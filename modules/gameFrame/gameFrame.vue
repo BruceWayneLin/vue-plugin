@@ -1,6 +1,7 @@
 <template>
   <div
-    class="gameFrame"
+    id="gameFrame"
+    :class="{'fullSize': sizeW, '': !sizeW}"
     v-if="url"
   >
     <div 
@@ -102,6 +103,7 @@ export default {
   },
   methods: {
     changeSize() {
+      this.sizeW = !this.sizeW;
       document.getElementById("gameIframe").classList.add("hugeSize");
       this.width = "100vw";
       this.height = "100vh";
@@ -114,11 +116,6 @@ export default {
     }
   },
   mounted(){
-    document.addEventListener("keydown", function(event) {
-      if(event.keyCode === 27){
-        document.getElementById("gameIframe").classList.remove("hugeSize");
-      }
-    });
   }
 };
 </script>
@@ -134,7 +131,14 @@ export default {
     width: 100%;
     height: 500px;
   }
-  .gameFrame {
+  .fullSize {
+    #special {
+      position: absolute!important;
+      bottom: 0!important;
+      left: 0!important;
+    } 
+  }
+  #gameFrame {
     max-width: 1300px;
     margin: auto;
   }
@@ -142,9 +146,10 @@ export default {
   #gameIframe.hugeSize {
     min-width: 100vw !important;
     position: fixed!important;
-    min-height: 100vh!important;
+    min-height: 90vh!important;
     z-index: 214748364;
   }
+
   #special  {
     display: flex;
     justify-content: flex-end;
