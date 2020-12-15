@@ -1,7 +1,6 @@
 
 import { events } from "../gameFrame/Events";
 import GameFrame from "../gameFrame/gameFrame.vue";
-import Switches from 'vue-switches';
 
 class Installer { 
   constructor() { 
@@ -13,7 +12,6 @@ class Installer {
         console.log("Mounted!");
       }
     });
-    Vue.use(Switches);
   }
 }
 

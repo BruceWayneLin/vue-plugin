@@ -48,7 +48,16 @@
             width="25px"
           />
         </div>
-        <switches v-model="enabled"></switches>
+        <div class="mr-4 switch">
+          <span class="mode-text text-white pr-2" v-if="enabled">
+            {{real}}
+          </span>
+          <span class="mode-text text-white pr-2" v-else>
+            {{demo}}
+          </span>
+          <switches v-model="enabled">
+          </switches>
+        </div>
 
       </div>
     </div>
@@ -59,13 +68,22 @@ import Fullscreen from "./images/Fullscreen.svg";
 import Close from "./images/close.svg";
 import Star from "./images/star.svg";
 import StarH from "./images/star-h.svg";
+import Switches from 'vue-switches';
 
 export default {
   name:"GameFrame",
   props: {
     url: String,
     game: Object, 
-    favor: Boolean
+    favor: Boolean,
+    real: {
+      default: 'Real Mode', 
+      type: String
+    },
+    demo: {
+      default: 'Demo Mode', 
+      type: String
+    },
   },
   data(){
     return {
@@ -79,7 +97,8 @@ export default {
     Fullscreen,
     Close, 
     Star,
-    StarH
+    StarH,
+    Switches
   },
   methods: {
     changeSize() {
@@ -136,6 +155,22 @@ export default {
     overflow: hidden;
     padding: 15px;
     margin-top: 5px;
+  }
+  .switch {
+    padding-top: 0.3rem;
+  }
+  .vue-switcher.vue-switcher-theme--default.vue-switcher-color--default {
+    div {
+        background-color: #31153e!important;
+
+        &:after {
+            background-color: #fff!important;
+        }
+    }
+  }
+  .mode-text {
+    position:relative;
+    top: -2px;
   }
  
 </style>
