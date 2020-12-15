@@ -14,9 +14,9 @@
   "author": "Skanda Lin",
   "license": "ISC",
   "dependencies": {
-    "@vue/ui": "^0.11.6"
+    "vue-switches": "^2.0.1"
   },
   "devDependencies": {
-    "@vue/ui": "^0.11.6"
+    "vue-switches": "^2.0.1"
   }
 }

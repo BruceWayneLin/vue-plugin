@@ -48,6 +48,8 @@
             width="25px"
           />
         </div>
+        <switches v-model="enabled"></switches>
+
       </div>
     </div>
   </div>
@@ -70,6 +72,7 @@ export default {
       height: "500px",
       width: "50%",
       sizeW: false,
+      enabled: true
     };
   },
   components:{
