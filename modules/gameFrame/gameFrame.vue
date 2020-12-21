@@ -49,7 +49,7 @@
             width="25px"
           />
         </div>
-        <div class="mr-4 switch">
+        <div class="mr-4 switch" @click="toChangeMode()">
           <span class="mode-text text-white pr-2" v-if="enabled">
             {{real}}
           </span>
@@ -59,7 +59,7 @@
           <switches v-model="enabled">
           </switches>
         </div>
-
+        {{detect}}
       </div>
     </div>
   </div>
@@ -76,7 +76,9 @@ export default {
   props: {
     url: String,
     game: Object, 
-    favor: Boolean,
+    favorParent: Boolean,
+    enabledParent: Boolean,
+    logined: Boolean,
     real: {
       default: 'Real Mode', 
       type: String
@@ -91,7 +93,7 @@ export default {
       height: "500px",
       width: "50%",
       sizeW: false,
-      enabled: true
+      favor: false,
     };
   },
   components:{
@@ -101,7 +103,16 @@ export default {
     StarH,
     Switches
   },
+  computed: {
+    detect() {
+      this.favor = this.favorParent;
+      this.enabled = this.enabledParent;
+    },
+  },
   methods: {
+    toChangeMode() {
+      this.$emit('playMode', this.enabled);
+    },
     changeSize() {
       this.sizeW = !this.sizeW;
       document.getElementById("gameIframe").classList.add("hugeSize");
@@ -176,6 +187,13 @@ export default {
   .mode-text {
     position:relative;
     top: -2px;
+  }
+  iframe {
+    border: 2px solid #84519c;
+    border-radius: 12px;
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+    -ms-border-radius:12px;
   }
  
 </style>
