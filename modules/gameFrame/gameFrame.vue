@@ -172,7 +172,6 @@ export default {
     margin-top: 5px;
   }
   .switch {
-    padding-top: 0.3rem;
   }
   .vue-switcher.vue-switcher-theme--default.vue-switcher-color--default {
     div {
