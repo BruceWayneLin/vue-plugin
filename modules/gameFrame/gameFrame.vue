@@ -185,7 +185,7 @@ export default {
   }
   .mode-text {
     position:relative;
-    top: -2px;
+    top: 2px;
   }
   iframe {
     border: 2px solid #84519c;
