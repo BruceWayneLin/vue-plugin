@@ -49,17 +49,16 @@
             width="25px"
           />
         </div>
-        <div class="mr-4 switch" @click="toChangeMode()">
-          <span class="mode-text text-white pr-2" v-if="enabled">
+        <div class="mr-4 switch">
+          <span class="mode-text text-white pr-2" v-if="enabledParent">
             {{real}}
           </span>
           <span class="mode-text text-white pr-2" v-else>
             {{demo}}
           </span>
-          <switches v-model="enabled">
-          </switches>
+          <ToggleButton v-model="enabledParent" :sync="true" @change="toChangeMode"/>
+          {{detect}}
         </div>
-        {{detect}}
       </div>
     </div>
   </div>
@@ -69,7 +68,7 @@ import Fullscreen from "./images/Fullscreen.svg";
 import Close from "./images/close.svg";
 import Star from "./images/star.svg";
 import StarH from "./images/star-h.svg";
-import Switches from 'vue-switches';
+import { ToggleButton } from 'vue-js-toggle-button'
 
 export default {
   name:"GameFrame",
@@ -101,17 +100,16 @@ export default {
     Close, 
     Star,
     StarH,
-    Switches
+    ToggleButton
   },
   computed: {
     detect() {
       this.favor = this.favorParent;
-      this.enabled = this.enabledParent;
     },
   },
   methods: {
     toChangeMode() {
-      this.$emit('playMode', this.enabled);
+      this.$emit('playMode', this.enabledParent);
     },
     changeSize() {
       this.sizeW = !this.sizeW;
@@ -127,6 +125,7 @@ export default {
     }
   },
   mounted(){
+    this.detect
   }
 };
 </script>
