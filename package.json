@@ -1,6 +1,6 @@
 {
   "name": "skanda-lib",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "vue 3 plugins ",
   "main": "index.js",
   "scripts": {
