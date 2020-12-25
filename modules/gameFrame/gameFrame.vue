@@ -50,17 +50,17 @@
           />
         </div>
         <div class="mr-4 switch">
-          <span class="mode-text pr-2" v-if="enabledParent" style="color:#9fa3aa;">
+          <span class="mode-text pr-2 d-none d-lg-block" v-if="enabledParent" style="color:#9fa3aa;">
             {{demo}}
           </span>
-          <span class="mode-text text-white pr-2" v-if="!enabledParent">
+          <span class="mode-text text-white pr-2 d-none d-lg-block" v-if="!enabledParent">
             {{demo}}
           </span>
           <ToggleButton v-model="enabledParent" :sync="true" @change="toChangeMode"/>
-          <span class="mode-text text-white pr-2" v-if="enabledParent">
+          <span class="mode-text text-white pr-2 d-none d-lg-block" v-if="enabledParent">
             {{real}}
           </span>
-          <span class="mode-text pr-2" v-if="!enabledParent" style="color:#9fa3aa;">
+          <span class="mode-text pr-2 d-none d-lg-block" v-if="!enabledParent" style="color:#9fa3aa;">
             {{real}}
           </span>
           {{detect}}
