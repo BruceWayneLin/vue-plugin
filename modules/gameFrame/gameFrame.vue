@@ -251,6 +251,7 @@ export default {
     },
     toClose() {
       this.url = '';
+      this.$emit('closeFrameWin', '');
     },
     toggleFavorite(event) {
       this.$emit('addFavor', this.favor);
