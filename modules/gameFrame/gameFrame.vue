@@ -35,19 +35,21 @@
             width="25px"
           />
         </div>
-        <div class="mr-4" v-if="!favor">
-          <Star
-            @click="toggleFavorite()"
-            style="cursor:pointer"
-            width="25px"
-          />
-        </div>
-        <div class="mr-4" v-else>
-          <StarH
-            @click="toggleFavorite()"
-            style="cursor:pointer"
-            width="25px"
-          />
+        <div v-if="hideFavor">
+          <div class="mr-4" v-if="!favor">
+            <Star
+              @click="toggleFavorite()"
+              style="cursor:pointer"
+              width="25px"
+            />
+          </div>
+          <div class="mr-4" v-else>
+            <StarH
+              @click="toggleFavorite()"
+              style="cursor:pointer"
+              width="25px"
+            />
+          </div>
         </div>
         <div class="mr-4 switch">
           <span class="mode-text pr-2 d-none d-lg-inline" v-if="enabledParent" style="color:#9fa3aa;">
@@ -210,6 +212,7 @@ export default {
     favorParent: Boolean,
     enabledParent: Boolean,
     logined: Boolean,
+    hideFavor: Boolean,
     real: {
       default: 'Real Mode', 
       type: String
