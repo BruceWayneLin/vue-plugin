@@ -51,7 +51,7 @@
             />
           </div>
         </div>
-        <div class="mr-4 switch">
+        <div class="mr-4 switch" v-if="hideToggle">
           <span class="mode-text pr-2 d-none d-lg-inline" v-if="enabledParent" style="color:#9fa3aa;">
             {{demo}}
           </span>
@@ -255,6 +255,7 @@ export default {
     toClose() {
       this.url = '';
       this.$emit('closeFrameWin', '');
+      window.location.href = '/'
     },
     toggleFavorite(event) {
       this.$emit('addFavor', this.favor);
